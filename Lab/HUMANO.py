@@ -19,7 +19,8 @@ class Humano(personaje):
         else:
             return False
     def Victoria(self):
-        print
+        print("Has Ganado")
+        return ("Nombre",self.__nombre)
 
     def Bono(self):
         pass
@@ -39,6 +40,7 @@ class Humano(personaje):
             print("INVALIDO")
             return False
             
+            ESTA MALO XD
 """
 
     

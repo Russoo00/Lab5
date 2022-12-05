@@ -20,6 +20,7 @@ def player1():
         humano.SetBoni=("Mas Daño")
         humano.Setfamilia=("Familia")
         humano.Historia()
+        lista_p1.append(humano)
         print("Estadisticas:")
         print("Nombre :",humano.SetNombre,"/   Raza :",humano.SetRaza,"/   Arma :",humano.SetArma,"/   Vida :",humano.SetVida,"/   Daño :",humano.SetDamage,"/   Proveniente de la tribu:",humano.Setfamilia)
         
@@ -32,6 +33,7 @@ def player1():
         elfo.SetBoni=("Quita el 10% De daño al rival")
         elfo.Setreino=("Reino")
         elfo.Historia()
+        lista_p1.append(elfo)
         print("Estadisticas:")
         print("Nombre :",elfo.SetNombre,"/   Raza :",elfo.SetRaza,"/   Arma :",elfo.SetArma,"/   Vida :",elfo.SetVida,"/   Daño :",elfo.SetDamage,"/   Proveniente de la tribu:",elfo.Setreino)
     elif p1 == 3:
@@ -43,11 +45,13 @@ def player1():
         enano.SetBoni="Aumenta Su vida"
         enano.Setclan="Clan"
         enano.Historia()
+        lista_p1.append(enano)
         print("Estadisticas:")
         print("Nombre :",enano.SetNombre,"/   Raza :",enano.SetRaza,"/   Arma :",enano.SetArma,"/   Vida :",enano.SetVida,"/   Daño :",enano.SetDamage,"Proveniente de la tribu:",enano.Setclan)
     else:
         print("Seleccione Personaje Valido")
         return player1()
+    lista_p1=[p1]
 
 
 def player2():
@@ -61,6 +65,7 @@ def player2():
         humano.SetBoni=("Mas Daño")
         humano.Setfamilia=("Familia")
         humano.Historia()
+        lista_p2.append(humano)
         print("Estadisticas:")
         print("Nombre :",humano.SetNombre,"/   Raza :",humano.SetRaza,"/   Arma :",humano.SetArma,"/   Vida :",humano.SetVida,"/   Daño :",humano.SetDamage,"/   Proveniente de la tribu:",humano.Setfamilia)
         
@@ -73,6 +78,7 @@ def player2():
         elfo.SetBoni=("Quita el 10% De daño al rival")
         elfo.Setreino=("Reino")
         elfo.Historia()
+        lista_p2.append(elfo)
         print("Estadisticas:")
         print("Nombre :",elfo.SetNombre,"/   Raza :",elfo.SetRaza,"/   Arma :",elfo.SetArma,"/   Vida :",elfo.SetVida,"/   Daño :",elfo.SetDamage,"/   Proveniente de la tribu:",elfo.Setreino)
     elif p2 == 3:
@@ -84,25 +90,24 @@ def player2():
         enano.SetBoni=("Aumenta Su vida")
         enano.Setclan=("Clan")
         enano.Historia()
+        lista_p2.append(enano)
         print("Estadisticas:")
         print("Nombre :",enano.SetNombre,"/   Raza :",enano.SetRaza,"/   Arma :",enano.SetArma,"/   Vida :",enano.SetVida,"/   Daño :",enano.SetDamage,"Proveniente de la tribu:",enano.Setclan)
-    else:
-        print("Seleccione Personaje Valido")
-        return player2()
+    lista_p2=[p2]
    
 def AumentoVida(self):
         vida_nueva=int(input("Ingrese los puntos de vida que quiere sumar del 1 al 50"))
         if vida_nueva >=50 and vida_nueva<=100:
-            self.__boni=vida_nueva+self.__vida
-            print("Su vida nueva es",self.__boni)
+            enano.SetBoni=vida_nueva+self.__vida
+            print("Su vida nueva es",enano.SetBoni)
             return True
         else:
             return False
 
-def Victoria():
-    
-    pass
-    
+"""""
+def turnos():
+    lista_p1
+"""""  
 
 
 

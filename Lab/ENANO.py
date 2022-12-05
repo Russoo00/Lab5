@@ -19,7 +19,8 @@ class Enano(personaje):
         else:
             return False
     def Victoria(self):
-        pass
+        print("Has ganado")
+        return ("Nombre",self.__nombre)
     def AumentoVida(self):
        pass
             

@@ -19,7 +19,8 @@ class Elfo(personaje):
         else:
             return False
     def Victoria(self):
-        pass
+        print("Felicidades Has ganado")
+        return ("Nombre",self.__nombre)
     def QuitaVida(self):
         pass
 
