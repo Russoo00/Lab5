@@ -6,8 +6,8 @@ from HUMANO import Humano
 humano=Humano("","","","","","","")
 elfo=Elfo("","","","","","","")
 enano=Enano("","","","","","","")
-lista_p1=[]
-lista_p2=[]
+lista_p=[]
+
 
 def player1():
     p1=int(input("Eliga el Personaje que quiere/1.Humano /2.Elfo /3.Enano:"))
@@ -20,7 +20,7 @@ def player1():
         humano.SetBoni=("Mas Daño")
         humano.Setfamilia=("Familia")
         humano.Historia()
-        lista_p1.append(humano)
+        lista_p.append(humano)
         print("Estadisticas:")
         print("Nombre :",humano.SetNombre,"/   Raza :",humano.SetRaza,"/   Arma :",humano.SetArma,"/   Vida :",humano.SetVida,"/   Daño :",humano.SetDamage,"/   Proveniente de la tribu:",humano.Setfamilia)
         
@@ -33,7 +33,7 @@ def player1():
         elfo.SetBoni=("Quita el 10% De daño al rival")
         elfo.Setreino=("Reino")
         elfo.Historia()
-        lista_p1.append(elfo)
+        lista_p.append(elfo)
         print("Estadisticas:")
         print("Nombre :",elfo.SetNombre,"/   Raza :",elfo.SetRaza,"/   Arma :",elfo.SetArma,"/   Vida :",elfo.SetVida,"/   Daño :",elfo.SetDamage,"/   Proveniente de la tribu:",elfo.Setreino)
     elif p1 == 3:
@@ -45,16 +45,14 @@ def player1():
         enano.SetBoni="Aumenta Su vida"
         enano.Setclan="Clan"
         enano.Historia()
-        lista_p1.append(enano)
+        lista_p.append(enano)
         print("Estadisticas:")
         print("Nombre :",enano.SetNombre,"/   Raza :",enano.SetRaza,"/   Arma :",enano.SetArma,"/   Vida :",enano.SetVida,"/   Daño :",enano.SetDamage,"Proveniente de la tribu:",enano.Setclan)
     else:
         print("Seleccione Personaje Valido")
         return player1()
-    lista_p1=[p1]
+    lista_p=[p1]
 
-
-def player2():
     p2=int(input("Eliga el Personaje que quiere/1.Humano /2.Elfo /3.Enano:"))
     if p2 == 1:
         humano.SetNombre=("Peter")
@@ -65,7 +63,7 @@ def player2():
         humano.SetBoni=("Mas Daño")
         humano.Setfamilia=("Familia")
         humano.Historia()
-        lista_p2.append(humano)
+        lista_p.append(humano)
         print("Estadisticas:")
         print("Nombre :",humano.SetNombre,"/   Raza :",humano.SetRaza,"/   Arma :",humano.SetArma,"/   Vida :",humano.SetVida,"/   Daño :",humano.SetDamage,"/   Proveniente de la tribu:",humano.Setfamilia)
         
@@ -78,7 +76,7 @@ def player2():
         elfo.SetBoni=("Quita el 10% De daño al rival")
         elfo.Setreino=("Reino")
         elfo.Historia()
-        lista_p2.append(elfo)
+        lista_p.append(elfo)
         print("Estadisticas:")
         print("Nombre :",elfo.SetNombre,"/   Raza :",elfo.SetRaza,"/   Arma :",elfo.SetArma,"/   Vida :",elfo.SetVida,"/   Daño :",elfo.SetDamage,"/   Proveniente de la tribu:",elfo.Setreino)
     elif p2 == 3:
@@ -90,10 +88,35 @@ def player2():
         enano.SetBoni=("Aumenta Su vida")
         enano.Setclan=("Clan")
         enano.Historia()
-        lista_p2.append(enano)
+        lista_p.append(enano)
         print("Estadisticas:")
         print("Nombre :",enano.SetNombre,"/   Raza :",enano.SetRaza,"/   Arma :",enano.SetArma,"/   Vida :",enano.SetVida,"/   Daño :",enano.SetDamage,"Proveniente de la tribu:",enano.Setclan)
-    lista_p2=[p2]
+    turno=1
+    while turno<=10:
+        turno=turno+1
+        if turno ==1:
+            if p1 == 1:
+                humano.Bono()
+                cambiar_arma()
+            elif p1==2:
+                elfo.QuitaVida()
+            elif p1== 3:
+                AumentoVida()
+                
+            if p2 == 1:
+                humano.Bono()
+            elif p2==2:
+                elfo.QuitaVida()
+            elif p2== 3:
+                AumentoVida()
+        lista_p[p1].SetVida(lista_p[p1].GetVida() - lista_p[p2].GetDamage())
+        lista_p[p2].SetVida(lista_p[p2].GetVida() - lista_p[p1].GetDamage())
+        if lista_p[p1].GetVida()<0:
+            "Derrota()"
+    
+            
+                
+        
    
 def AumentoVida(self):
         vida_nueva=int(input("Ingrese los puntos de vida que quiere sumar del 1 al 50"))
@@ -104,10 +127,6 @@ def AumentoVida(self):
         else:
             return False
 
-"""""
-def turnos():
-    lista_p1
-"""""  
 
 
 

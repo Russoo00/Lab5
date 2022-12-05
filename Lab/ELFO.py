@@ -22,7 +22,7 @@ class Elfo(personaje):
         print("Felicidades Has ganado")
         return ("Nombre",self.__nombre)
     def QuitaVida(self):
-        pass
+        super().SetVida(super().GetVida())
 
 
 

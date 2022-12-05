@@ -23,25 +23,19 @@ class Humano(personaje):
         return ("Nombre",self.__nombre)
 
     def Bono(self):
-        pass
-        """""
+        
         daño_nuevo=int(input("Ingrese el daño que quiera añadir Solo se permite del +5 hasta el +15"))
         i=daño_nuevo
-        while i >=5 and i <=15:
-            if i!=0:
-                i=daño_nuevo-1
-                self.__boni=self.__damage+daño_nuevo
-                print("Tu nuevo daño sera de",self.__boni)
-                return True
-            else:
-                False
-
+        if i>=5 and i<=15:
+            self.__boni=super().SetDamage+daño_nuevo
+            print("Tu nuevo daño sera de",self.__boni)
+        
         else:
             print("INVALIDO")
             return False
             
-            ESTA MALO XD
-"""
+           
+
 
     
 

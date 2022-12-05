@@ -42,7 +42,7 @@ class personaje():
     def Derrota(self):
         pass
     def Mensaje_inicio(self):
-        pass
+        print("El combate empezara")
    
 
 
